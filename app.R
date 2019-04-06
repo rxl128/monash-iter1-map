@@ -40,7 +40,7 @@ waste_data$X2035 <- as.numeric(as.character(gsub(",","",waste_data$X2035)))
 waste_sum = setNames(aggregate(list(waste_data$X2018,waste_data$X2035), by=list(Category=waste_data$Local.Government), FUN=sum),c('Name',2018,2035))
 waste_sum$Name = trimws(waste_sum$Name)
 
-waste_sum = setorder(waste_sum, by='Name')
+waste_sum = waste_sum[order(waste_sum$Name),]
 
 ##counting collectin points per lg
 count_waste = setNames(as.data.frame(table(waste_data$Local.Government)),c('Name','Count'))
