@@ -24,7 +24,7 @@ names(citycode)[names(citycode) == "Code"] <- "LG_PLY_PID"
 # head(citycode)
 
 ##data from the venar list fole named clean_data
-waste_data = read.csv("clean_Data.csv",header = TRUE)
+waste_data = read.csv("clean_data.csv",header = TRUE)
 #waste_data
 
 # Fix for Mornington Peninsula
