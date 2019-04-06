@@ -10,6 +10,7 @@ library(plyr)
 library(reshape2)
 library(ggplot2)
 
+options(shiny.deprecation.messages = FALSE)
 ##local code file used for naming the suburbs
 citycode = read.csv("LOCAL_CODE.csv",header = TRUE)
 citycode$Name = trimws(citycode$Name) # Trim ws
