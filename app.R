@@ -10,7 +10,6 @@ library(plyr)
 library(reshape2)
 library(ggplot2)
 
-options(shiny.deprecation.messages = FALSE)
 ##local code file used for naming the suburbs
 citycode = read.csv("LOCAL_CODE.csv",header = TRUE)
 citycode$Name = trimws(citycode$Name) # Trim ws
@@ -156,7 +155,7 @@ server <- function(input, output, session) {
                     label=~Name)
   })
     
-    output$comparison <- reactivePlot(function()     ##boxplot output
+    output$comparison <- renderPlot(function()     ##boxplot output
     {
       first_selection <- as.character(input$first)
       second_selection <- as.character(input$second)
